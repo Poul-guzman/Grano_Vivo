@@ -1,0 +1,67 @@
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    /* Si quieres que el menú siempre esté visible, descomenta las líneas de abajo: */
+    /* position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; */
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 100px; /* Espacio entre los elementos del menú */
+}
+.menu a {
+    font-size: 20px;
+    display: flex;
+    padding: 5px 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transición para efecto hover */
+}
+.menu a:hover {
+    color: chocolate; /* Efecto al pasar el mouse */
+}
+
+.logo {
+    height: 100px;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: chocolate !important; /* Destacar enlaces con el color de tu marca */
+}
+
+/* contenido */
+
+.contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #4B2E0F; /* Color marrón oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.imagenes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contactanos {
+    text-align: left;
+}

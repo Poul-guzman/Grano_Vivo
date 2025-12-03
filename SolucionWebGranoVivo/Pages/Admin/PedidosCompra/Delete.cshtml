@@ -1,0 +1,22 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.PedidosCompra.DeleteModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Eliminar Pedido de Compra";
+}
+
+<h1>Eliminar Pedido de Compra</h1>
+
+<div class="alert alert-danger">
+    <p>
+        ¿Está seguro que desea eliminar el pedido
+        <strong>@Model.PedidoCompra.Codigo</strong>
+        del proveedor
+        <strong>@Model.PedidoCompra.Proveedor?.Nombre</strong>?
+    </p>
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

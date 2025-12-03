@@ -1,0 +1,31 @@
+@page
+@model SolucionWebGranoVivo.Pages.Admin.Productos.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<h1>Eliminar Producto</h1>
+
+<h3>¿Seguro que deseas eliminar este producto?</h3>
+
+<div>
+    <h4>@Model.Producto.Nombre</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Código</dt>
+        <dd class="col-sm-10">@Model.Producto.Codigo</dd>
+
+        <dt class="col-sm-2">Descripción</dt>
+        <dd class="col-sm-10">@Model.Producto.Descripcion</dd>
+
+        <dt class="col-sm-2">Precio</dt>
+        <dd class="col-sm-10">@Model.Producto.Precio</dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Producto.Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="./Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

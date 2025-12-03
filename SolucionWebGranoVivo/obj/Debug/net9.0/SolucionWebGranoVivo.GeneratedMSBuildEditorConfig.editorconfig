@@ -1,0 +1,297 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SolucionWebGranoVivo
+build_property.RootNamespace = SolucionWebGranoVivo
+build_property.ProjectDir = C:\Users\Idat\Desktop\SolucionWebGranoVivo\SolucionWebGranoVivo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Idat\Desktop\SolucionWebGranoVivo\SolucionWebGranoVivo
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Clientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Clientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Clientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Clientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Clientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2xpZW50ZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/ExportPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXEV4cG9ydFBkZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Cotizaciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/ExportPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcRXhwb3J0UGRmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/ExportPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxFeHBvcnRQZGYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/OrdenesCompra/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZW5lc0NvbXByYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/ExportPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxFeHBvcnRQZGYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/PedidosCompra/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGVkaWRvc0NvbXByYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Productos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Productos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Productos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Productos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Proveedores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvdmVlZG9yZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Proveedores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvdmVlZG9yZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Proveedores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvdmVlZG9yZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Proveedores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvdmVlZG9yZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Admin/Proveedores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvdmVlZG9yZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Contacto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/LibroReclamaciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9SZWNsYW1hY2lvbmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Nosotros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm9zb3Ryb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/PoliticaEnvioCambio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXRpY2FFbnZpb0NhbWJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/PoliticaPrivacidad.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9saXRpY2FQcml2YWNpZGFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/TerminosCondiciones.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVybWlub3NDb25kaWNpb25lcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Tienda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGllbmRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Clientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxDbGllbnRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Clientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxDbGllbnRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Productos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxQcm9kdWN0b3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxQcm9kdWN0b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Proveedores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxQcm92ZWVkb3Jlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Trabajador/Proveedores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhYmFqYWRvclxQcm92ZWVkb3Jlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Idat/Desktop/SolucionWebGranoVivo/SolucionWebGranoVivo/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zr7tk7dibo

@@ -1,0 +1,38 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.Cotizaciones.EditModel
+@{
+    ViewData["Title"] = "Editar Cotización";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Cotizacion.Id" />
+
+    <div class="form-floating mb-3">
+        <input asp-for="Cotizacion.Codigo" class="form-control" readonly />
+        <label asp-for="Cotizacion.Codigo">Código</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="Cotizacion.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select"></select>
+        <label asp-for="Cotizacion.ProveedorId">Proveedor</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="Cotizacion.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Aceptada">Aceptada</option>
+            <option value="Rechazada">Rechazada</option>
+        </select>
+        <label asp-for="Cotizacion.Estado">Estado</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="Cotizacion.Total" class="form-control" readonly />
+        <label asp-for="Cotizacion.Total">Total</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

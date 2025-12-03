@@ -1,0 +1,63 @@
+﻿@page
+@model ContactoModel
+@{
+    ViewData["Title"] = "Contáctanos";
+}
+
+<div class="contactanos text-center mt-4">
+    <h1>Contáctanos</h1>
+    <p class="lead">
+        Estamos aquí para ayudarte. Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.
+    </p>
+</div>
+
+
+<div class="container mt-5" style="max-width: 650px">
+    <div class="card shadow p-4">
+        <form id="form-contacto">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required />
+                </div>
+                <div class="col-md-6">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" name="correo" required />
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required />
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4">Enviar</button>
+            </div>
+        </form>
+        <div id="alerta" class="alert alert-success mt-3 text-center d-none">
+            ¡Gracias por contactarnos! Te responderemos pronto.
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        
+        document.getElementById("form-contacto").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const alerta = document.getElementById("alerta");
+            alerta.classList.remove("d-none");
+            this.reset();
+            setTimeout(() => {
+                alerta.classList.add("d-none");
+            }, 4000);
+        });
+    </script>
+}

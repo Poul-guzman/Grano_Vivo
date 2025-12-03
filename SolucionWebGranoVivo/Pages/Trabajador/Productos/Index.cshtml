@@ -1,0 +1,63 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Trabajador.Productos.IndexModel
+@{
+    ViewData["Title"] = "Productos";
+    Layout = "_Layout";
+}
+
+<h1>Lista de Productos</h1>
+
+<div class="mb-3">
+    <a asp-page="/Trabajador/Clientes/Index" class="btn btn-outline-secondary me-2">
+        <i class="fas fa-users"></i> Ver Clientes
+    </a>
+    <a asp-page="/Trabajador/Proveedores/Index" class="btn btn-outline-secondary">
+        <i class="fas fa-truck"></i> Ver Proveedores
+    </a>
+</div>
+
+@if (Model.Productos == null || !Model.Productos.Any())
+{
+    <div class="alert alert-info">No hay productos registrados.</div>
+}
+else
+{
+    <table class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Peso</th>
+                <th>Tipo Tueste</th>
+                <th>Origen</th>
+                <th>Imagen</th>
+                <th>Estado</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Productos)
+            {
+                <tr>
+                    <td>@item.Codigo</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Precio</td>
+                    <td>@item.Stock</td>
+                    <td>@item.Peso</td>
+                    <td>@item.TipoTueste</td>
+                    <td>@item.Origen</td>
+                    <td>
+                        <img src="@item.ImagenUrl" style="width:100px" />
+                    </td>
+                    <td>@item.Estado</td>
+                    <td>
+                        <a asp-page="./Details" asp-route-id="@item.Id"
+                           class="btn btn-sm btn-info">Ver</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
