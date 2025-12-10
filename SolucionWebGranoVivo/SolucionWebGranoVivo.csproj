@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
+    <Folder Include="Pages\Admin\GuiasEntrada\" />
     <Folder Include="Pages\Admin\Productos\" />
     <Folder Include="Services\" />
   </ItemGroup>

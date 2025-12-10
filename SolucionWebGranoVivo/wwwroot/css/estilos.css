@@ -163,3 +163,11 @@ footer a:hover {
 .product-card:hover img {
     transform: scale(1.1);
 }
+
+.copyrights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+}

@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3e0b0aa24e4707fb979ed5e0786ae6402840638")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
