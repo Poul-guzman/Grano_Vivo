@@ -1,0 +1,18 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.GuiasEntrada.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Guía de Entrada";
+}
+
+<div class="container mt-4">
+    <h2>¿Eliminar Guía de Entrada?</h2>
+
+    <div class="alert alert-danger">
+        ¿Estás seguro que deseas eliminar la guía <strong>@Model.GuiaEntrada.IdGuiaEntrada</strong>?
+    </div>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

@@ -16,10 +16,12 @@ namespace SolucionWebGranoVivo.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
-
         
         public DbSet<GuiaSalida> GuiaSalida { get; set; }
         public DbSet<DetalleGuiaSalida> DetalleGuiaSalida { get; set; }
+
+        public DbSet<GuiaEntrada> GuiasEntrada { get; set; }
+        public DbSet<DetalleGuiaEntrada> DetallesGuiasEntrada { get; set; }
 
         public DbSet<Cotizacion> Cotizaciones { get; set; }
         public DbSet<DetalleCotizacion> DetallesCotizacion { get; set; }

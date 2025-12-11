@@ -100,6 +100,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ290aXphY2lvbmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasEntrada/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNFbnRyYWRhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasEntrada/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNFbnRyYWRhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasEntrada/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNFbnRyYWRhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasEntrada/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNFbnRyYWRhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasEntrada/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNFbnRyYWRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/asdasd/Grano_Vivo/SolucionWebGranoVivo/Pages/Admin/GuiasSalida/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR3VpYXNTYWxpZGFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
