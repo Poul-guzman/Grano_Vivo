@@ -1,10 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using SolucionWebGranoVivo.Data;
 using SolucionWebGranoVivo.Models;
-
 
 namespace SolucionWebGranoVivo.Pages.Admin.GuiasEntrada
 {
@@ -12,43 +10,40 @@ namespace SolucionWebGranoVivo.Pages.Admin.GuiasEntrada
     {
         private readonly ApplicationDbContext _context;
 
-
         public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-
         [BindProperty]
-        public GuiaEntrada GuiaEntrada { get; set; }
+        public GuiaEntrada GuiaEntrada { get; set; } = new();
 
-
-        public IList<Producto> Productos { get; set; }
-        public IList<Proveedor> Proveedores { get; set; }
-        public SelectList ProveedoresSelectList { get; set; }
-
+        public List<Proveedor> Proveedores { get; set; } = new();
+        public List<Producto> Productos { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Productos = await _context.Productos.ToListAsync();
             Proveedores = await _context.Proveedores.ToListAsync();
-            ProveedoresSelectList = new SelectList(Proveedores, "Id", "Nombre");
+            Productos = await _context.Productos.ToListAsync();
+
+            // 👇 IMPORTANTE: inicializar al menos una fila
+            GuiaEntrada.Detalles.Add(new DetalleGuiaEntrada());
+
             return Page();
         }
-
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-                Productos = await _context.Productos.ToListAsync();
                 Proveedores = await _context.Proveedores.ToListAsync();
+                Productos = await _context.Productos.ToListAsync();
                 return Page();
             }
 
-
             _context.GuiasEntrada.Add(GuiaEntrada);
             await _context.SaveChangesAsync();
+
             return RedirectToPage("Index");
         }
     }

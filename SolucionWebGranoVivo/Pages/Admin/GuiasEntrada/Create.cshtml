@@ -1,29 +1,78 @@
 ﻿@page
 @model SolucionWebGranoVivo.Pages.Admin.GuiasEntrada.CreateModel
 @{
-    ViewData["Title"] = "Nueva Guía de Entrada";
+    ViewData["Title"] = "Registrar Guía de Entrada";
 }
 
-<div class="container mt-4">
-    <h2>Nueva Guía de Entrada</h2>
+<h1 class="mb-4">Registrar Guías de Entrada</h1>
 
-    <form method="post">
-        <div class="mb-3">
-            <label class="form-label">Proveedor</label>
-            <select asp-for="GuiaEntrada.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select"></select>
+<form method="post">
+    <fieldset class="border p-3 mb-4">
+        <legend class="fw-bold">Datos de la guía</legend>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label asp-for="GuiaEntrada.IdGuiaEntrada" class="form-label">Nro. de guía</label>
+                <input asp-for="GuiaEntrada.IdGuiaEntrada" class="form-control" />
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="GuiaEntrada.ProveedorId" class="form-label">Proveedor</label>
+                <select asp-for="GuiaEntrada.ProveedorId" class="form-select"
+                        asp-items="@(new SelectList(Model.Proveedores, "Id", "Nombre"))">
+                    <option value="">-- Seleccione --</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="GuiaEntrada.Fecha" class="form-label">Fecha</label>
+                <input asp-for="GuiaEntrada.Fecha" type="date" class="form-control" />
+            </div>
         </div>
+    </fieldset>
 
-        <div class="mb-3">
-            <label class="form-label">Responsable</label>
-            <input asp-for="GuiaEntrada.Responsable" class="form-control" />
-        </div>
+    <fieldset class="border p-3 mb-4">
+        <legend class="fw-bold">Detalle de productos</legend>
 
-        <div class="mb-3">
-            <label class="form-label">Observaciones</label>
-            <textarea asp-for="GuiaEntrada.Observaciones" class="form-control"></textarea>
-        </div>
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Costo unitario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.GuiaEntrada.Detalles.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            <select asp-for="GuiaEntrada.Detalles[i].ProductoId" class="form-select"
+                                    asp-items="@(new SelectList(Model.Productos, "Id", "Codigo"))"></select>
+                        </td>
+                        <td>
+                            @Model.Productos.FirstOrDefault(p => p.Id == Model.GuiaEntrada.Detalles[i].ProductoId)?.Nombre
+                        </td>
+                        <td>
+                            <input asp-for="GuiaEntrada.Detalles[i].Cantidad" class="form-control" />
+                        </td>
+                        <td>
+                            <input asp-for="GuiaEntrada.Detalles[i].CostoUnitario" class="form-control" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
-    </form>
-</div>
+        <button type="button" class="btn btn-secondary">Agregar producto</button>
+    </fieldset>
+
+    <fieldset class="border p-3 mb-4">
+        <legend class="fw-bold">Observaciones</legend>
+        <textarea asp-for="GuiaEntrada.Observaciones" class="form-control" rows="3"></textarea>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">Registrar guía</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
