@@ -26,6 +26,11 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 
 builder.Services.AddRazorPages();
 
+// Registrar servicios de Backup y Restore
+builder.Services.AddSingleton(new SolucionWebGranoVivo.Services.DatabaseBackupService(connectionString));
+builder.Services.AddSingleton(new SolucionWebGranoVivo.Services.DatabaseRestoreService(connectionString));
+
+
 var app = builder.Build();
 
 // Inicializar roles y usuario admin
