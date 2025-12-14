@@ -1,0 +1,26 @@
+# Ignorar archivos temporales de Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignorar carpetas de compilación
+bin/
+obj/
+log/
+
+# Ignorar paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Ignorar archivos de base de datos y backups
+*.bak
+*.mdf
+*.ldf
+
+# Otros temporales
+*.tmp
+*.cache
+*.log
