@@ -1,0 +1,60 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.ReporteVenta.IndexModel
+@{
+    ViewData["Title"] = "Reporte de Ventas";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-primary">Reporte de Ventas</h2>
+    <table class="table table-bordered table-striped table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Cantidad Vendida</th>
+                <th>Precio Unitario (S/)</th>
+                <th>Total (S/)</th>
+                <th>Fecha de Venta</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td>Café Tradición</td>
+                <td>Grano</td>
+                <td>20</td>
+                <td>35</td>
+                <td>700</td>
+                <td>2025-12-09</td>
+                <td>Tienda A</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Café Orgánico</td>
+                <td>Grano</td>
+                <td>15</td>
+                <td>40</td>
+                <td>600</td>
+                <td>2025-12-09</td>
+                <td>Tienda B</td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td>Café Premium</td>
+                <td>Grano</td>
+                <td>10</td>
+                <td>50</td>
+                <td>500</td>
+                <td>2025-12-10</td>
+                <td>Cliente C</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-success">
+        <i class="fas fa-file-excel"></i> Descargar Reporte Excel
+    </button>
+</div>

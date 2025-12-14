@@ -1,0 +1,60 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.ReporteCompra.IndexModel
+@{
+    ViewData["Title"] = "Reporte de Compras";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3 text-primary">Reporte de Compras</h2>
+    <table class="table table-bordered table-striped table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Categoría</th>
+                <th>Cantidad Comprada</th>
+                <th>Precio Unitario (S/)</th>
+                <th>Total (S/)</th>
+                <th>Fecha de Compra</th>
+                <th>Proveedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>201</td>
+                <td>Café Tradición</td>
+                <td>Grano</td>
+                <td>50</td>
+                <td>25</td>
+                <td>1250</td>
+                <td>2025-12-08</td>
+                <td>Café Perú SAC</td>
+            </tr>
+            <tr>
+                <td>202</td>
+                <td>Café Orgánico</td>
+                <td>Grano</td>
+                <td>40</td>
+                <td>30</td>
+                <td>1200</td>
+                <td>2025-12-09</td>
+                <td>Exportadora Andina</td>
+            </tr>
+            <tr>
+                <td>203</td>
+                <td>Café Premium</td>
+                <td>Grano</td>
+                <td>60</td>
+                <td>35</td>
+                <td>2100</td>
+                <td>2025-12-10</td>
+                <td>Distribuidora Global</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-success">
+        <i class="fas fa-file-excel"></i> Descargar Reporte Excel
+    </button>
+</div>
