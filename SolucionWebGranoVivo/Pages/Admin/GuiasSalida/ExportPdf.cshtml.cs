@@ -23,7 +23,7 @@ namespace SolucionWebGranoVivo.Pages.Admin.GuiasSalida
 
         public IActionResult OnGet(string id)
         {
-            var guia =  _context.GuiaSalida
+            var guia = _context.GuiaSalida
                 .Include(g => g.Cliente)
                 .Include(g => g.Detalles).ThenInclude(d => d.Producto)
                 .FirstOrDefault(g => g.IdGuiaSalida == id);
@@ -38,23 +38,20 @@ namespace SolucionWebGranoVivo.Pages.Admin.GuiasSalida
                 {
                     page.Margin(40);
 
-                    
                     page.Header().Row(row =>
                     {
-                        row.ConstantColumn(60).Image(logoPath, ImageScaling.FitWidth);
-                        row.RelativeColumn().AlignCenter().Column(col =>
+                        row.ConstantItem(60).Image(logoPath);
+                        row.RelativeItem().AlignCenter().Column(col =>
                         {
                             col.Item().Text("GRANO VIVO SELECTO").FontSize(18).Bold();
                         });
-                        row.ConstantColumn(130).Border(1).Padding(5).AlignCenter().Column(col =>
+                        row.ConstantItem(130).Border(1).Padding(5).AlignCenter().Column(col =>
                         {
                             col.Item().Text("GUIA SALIDA").FontSize(10).Bold();
                             col.Item().Text(guia.IdGuiaSalida).FontSize(12).Bold();
                         });
-
                     });
 
-                    
                     page.Content().Column(col =>
                     {
                         col.Spacing(5);
@@ -67,13 +64,12 @@ namespace SolucionWebGranoVivo.Pages.Admin.GuiasSalida
 
                         col.Item().LineHorizontal(1);
 
-                        
                         col.Item().Table(table =>
                         {
                             table.ColumnsDefinition(columns =>
                             {
-                                columns.RelativeColumn(3); 
-                                columns.RelativeColumn(1); 
+                                columns.RelativeColumn(3);
+                                columns.RelativeColumn(1);
                             });
 
                             table.Header(header =>
@@ -90,12 +86,10 @@ namespace SolucionWebGranoVivo.Pages.Admin.GuiasSalida
                         });
                     });
 
-                   
                     page.Footer().AlignCenter().Text("Generado automáticamente por Grano Vivo Selecto");
                 });
             });
 
-            
             using var stream = new MemoryStream();
             document.GeneratePdf(stream);
             stream.Position = 0;
