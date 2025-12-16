@@ -1,4 +1,4 @@
-﻿ @using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<SolucionWebGranoVivo.Models.ApplicationUser> SignInManager
 @inject UserManager<SolucionWebGranoVivo.Models.ApplicationUser> UserManager
 
@@ -41,6 +41,13 @@
                                 <li><a class="dropdown-item" asp-page="/Admin/Cotizaciones/Index">Cotizaciones</a></li>
                                 <li><a class="dropdown-item" asp-page="/Admin/OrdenesCompra/Index">Órdenes de compra</a></li>
                                 <li><a class="dropdown-item" asp-page="/Admin/PedidosCompra/Index">Pedidos de compra</a></li>
+
+                                @* Inventario solo visible para Administrador *@
+                                @if (User.IsInRole("Administrador"))
+                                {
+                                    <li><a class="dropdown-item" asp-page="/Admin/Inventario/Index">Inventario</a></li>
+                                }
+
                                 <li><a class="dropdown-item" asp-page="/Admin/ReporteCompra/Index">Reporte de compra</a></li>
                                 <li><a class="dropdown-item" asp-page="/Admin/ReporteVenta/Index">Reporte de ventas</a></li>
                             </ul>
@@ -72,12 +79,10 @@
 
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <img src="~/img/Imagen de WhatsApp 2025-10-06 a las 15.36.05_49e00a52.jpg" alt="logo cafe" class="logo">
-                    <p>
-                        <br>
-                    </p>
+                    <p><br></p>
                     <h5 class="text-uppercase mb-4 fw-bold text-warning">Grano Vivo Selecto</h5>
                     <p>Tu destino para el mejor café de origen. Calidad y sabor garantizados en cada taza.</p>
-                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Nuestros metodos de pago</h5>
+                    <h5 class="text-uppercase mb-4 fw-bold text-warning">Nuestros métodos de pago</h5>
                     <div class="d-flex gap-3" style="padding-left: 25px;">
                         <img src="~/img/mastercard.png" alt="mastercard.png" style="width: 50px; height: 35px;">
                         <img src="~/img/visa.png" alt="visa.png" style="width: 50px; height: 35px;">

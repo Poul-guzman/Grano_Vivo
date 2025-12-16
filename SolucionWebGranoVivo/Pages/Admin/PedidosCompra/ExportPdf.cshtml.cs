@@ -1,7 +1,6 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
-using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +8,6 @@ using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
 using SolucionWebGranoVivo.Data;
 using SolucionWebGranoVivo.Models;
-using static QuestPDF.Helpers.Colors;
 
 namespace SolucionWebGranoVivo.Pages.Admin.PedidosCompra
 {
@@ -41,30 +39,27 @@ namespace SolucionWebGranoVivo.Pages.Admin.PedidosCompra
                 {
                     page.Margin(30);
 
-                    
                     page.Header().Row(row =>
                     {
-                        row.ConstantColumn(60).Image(logoPath, ImageScaling.FitWidth);
-                        row.RelativeColumn().AlignCenter().Column(col =>
+                        row.ConstantItem(60).Image(logoPath); // ✅ antes: ConstantColumn + ImageScaling
+                        row.RelativeItem().AlignCenter().Column(col =>
                         {
                             col.Item().Text("GRANO VIVO SELECTO").FontSize(18).Bold();
                         });
-                        row.ConstantColumn(130).Border(1).Padding(5).AlignCenter().Column(col =>
+                        row.ConstantItem(130).Border(1).Padding(5).AlignCenter().Column(col =>
                         {
                             col.Item().Text("Pedido de Compra").FontSize(10).Bold();
                             col.Item().Text(pedido.Codigo).FontSize(12).Bold();
                         });
-
                     });
 
-                    
                     page.Content().Column(col =>
                     {
                         col.Spacing(6);
 
                         col.Item().Row(row =>
                         {
-                            row.RelativeColumn().Column(c =>
+                            row.RelativeItem().Column(c =>
                             {
                                 c.Item().Text($"Fecha: {pedido.Fecha:dd/MM/yyyy}");
                                 c.Item().Text($"Proveedor: {pedido.Proveedor?.Nombre}");
@@ -74,15 +69,14 @@ namespace SolucionWebGranoVivo.Pages.Admin.PedidosCompra
 
                         col.Item().LineHorizontal(1);
 
-                       
                         col.Item().Table(table =>
                         {
                             table.ColumnsDefinition(columns =>
                             {
-                                columns.RelativeColumn(5); 
-                                columns.RelativeColumn(1); 
-                                columns.RelativeColumn(2); 
-                                columns.RelativeColumn(2); 
+                                columns.RelativeColumn(5);
+                                columns.RelativeColumn(1);
+                                columns.RelativeColumn(2);
+                                columns.RelativeColumn(2);
                             });
 
                             table.Header(header =>
@@ -100,16 +94,16 @@ namespace SolucionWebGranoVivo.Pages.Admin.PedidosCompra
                                 table.Cell().AlignRight().Text(d.PrecioUnitario.ToString("C"));
                                 table.Cell().AlignRight().Text(d.SubTotal.ToString("C"));
                             }
-
-                            
                         });
 
                         col.Item().LineHorizontal(1);
-                        col.Item().AlignRight().Text($"Total: {pedido.Total.ToString("C", CultureInfo.CreateSpecificCulture("es-PE"))}").FontSize(12).Bold();
+
+                        col.Item().AlignRight().Text(
+                            $"Total: {pedido.Total.ToString("C", CultureInfo.CreateSpecificCulture("es-PE"))}"
+                        ).FontSize(12).Bold();
                     });
 
-                    
-                    
+                    page.Footer().AlignCenter().Text("Generado automáticamente por Grano Vivo Selecto");
                 });
             });
 

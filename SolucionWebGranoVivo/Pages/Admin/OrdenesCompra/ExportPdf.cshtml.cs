@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
@@ -40,30 +40,27 @@ namespace SolucionWebGranoVivo.Pages.Admin.OrdenesCompra
                 {
                     page.Margin(30);
 
-                    
                     page.Header().Row(row =>
                     {
-                        row.ConstantColumn(60).Image(logoPath, ImageScaling.FitWidth);
-                        row.RelativeColumn().AlignCenter().Column(col =>
+                        row.ConstantItem(60).Image(logoPath); // ✅ antes: ConstantColumn + ImageScaling
+                        row.RelativeItem().AlignCenter().Column(col =>
                         {
                             col.Item().Text("GRANO VIVO SELECTO").FontSize(18).Bold();
                         });
-                        row.ConstantColumn(130).Border(1).Padding(5).AlignCenter().Column(col =>
+                        row.ConstantItem(130).Border(1).Padding(5).AlignCenter().Column(col =>
                         {
                             col.Item().Text("Orden de Compra").FontSize(10).Bold();
                             col.Item().Text(orden.Codigo).FontSize(12).Bold();
                         });
-
                     });
 
-                    
                     page.Content().Column(col =>
                     {
                         col.Spacing(6);
 
                         col.Item().Row(row =>
                         {
-                            row.RelativeColumn().Column(c =>
+                            row.RelativeItem().Column(c =>
                             {
                                 c.Item().Text($"Fecha: {orden.Fecha:dd/MM/yyyy}");
                                 c.Item().Text($"Proveedor: {orden.Proveedor?.Nombre}");
@@ -73,15 +70,14 @@ namespace SolucionWebGranoVivo.Pages.Admin.OrdenesCompra
 
                         col.Item().LineHorizontal(1);
 
-                        
                         col.Item().Table(table =>
                         {
                             table.ColumnsDefinition(columns =>
                             {
-                                columns.RelativeColumn(5); 
-                                columns.RelativeColumn(1); 
-                                columns.RelativeColumn(2); 
-                                columns.RelativeColumn(2); 
+                                columns.RelativeColumn(5);
+                                columns.RelativeColumn(1);
+                                columns.RelativeColumn(2);
+                                columns.RelativeColumn(2);
                             });
 
                             table.Header(header =>
@@ -99,17 +95,16 @@ namespace SolucionWebGranoVivo.Pages.Admin.OrdenesCompra
                                 table.Cell().AlignRight().Text(d.PrecioUnitario.ToString("C"));
                                 table.Cell().AlignRight().Text(d.SubTotal.ToString("C"));
                             }
-
-                            
                         });
 
                         col.Item().LineHorizontal(1);
 
-                        col.Item().AlignRight().Text($"Total: {orden.Total.ToString("C", CultureInfo.CreateSpecificCulture("es-PE"))}").FontSize(12).Bold();
+                        col.Item().AlignRight().Text(
+                            $"Total: {orden.Total.ToString("C", CultureInfo.CreateSpecificCulture("es-PE"))}"
+                        ).FontSize(12).Bold();
                     });
 
-                   
-                    page.Footer().AlignCenter().Text("Generado autom�ticamente por Grano Vivo Selecto");
+                    page.Footer().AlignCenter().Text("Generado automáticamente por Grano Vivo Selecto");
                 });
             });
 

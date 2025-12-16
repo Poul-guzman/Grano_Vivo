@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SolucionWebGranoVivo.Data;
 using SolucionWebGranoVivo.Models;
+using SolucionWebGranoVivo.Services; // 👈 importa el namespace de tu servicio
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,10 +27,12 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 
 builder.Services.AddRazorPages();
 
+// 👇 Aquí registras tu servicio de Inventario
+builder.Services.AddScoped<InventoryGeneratorService>();
+
 var app = builder.Build();
 
 // Inicializar roles y usuario admin
-
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
