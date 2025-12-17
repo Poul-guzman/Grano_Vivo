@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SolucionWebGranoVivo",
+    "\\SolucionWebGranoVivo\\Pages",
+    "\\SolucionWebGranoVivo\\Pages\\Admin",
+    "\\SolucionWebGranoVivo\\Pages\\Admin\\ReporteCompra",
+    "\\SolucionWebGranoVivo\\Pages\\Trabajador"
   ],
-  "SelectedNode": "\\SolucionWebGranoVivo.sln",
+  "SelectedNode": "\\SolucionWebGranoVivo\\Pages\\Admin\\ReporteCompra\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

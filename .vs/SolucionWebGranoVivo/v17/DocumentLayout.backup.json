@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|d:\\asdasd\\grano_vivo\\grano_vivo\\solucionwebgranovivo\\pages\\admin\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|solutionrelative:solucionwebgranovivo\\pages\\admin\\factura\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|d:\\asdasd\\grano_vivo\\grano_vivo\\solucionwebgranovivo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|solutionrelative:solucionwebgranovivo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|d:\\asdasd\\grano_vivo\\grano_vivo\\solucionwebgranovivo\\migrations\\20251217023517_pierop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|solutionrelative:solucionwebgranovivo\\migrations\\20251217023517_pierop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|d:\\asdasd\\grano_vivo\\grano_vivo\\solucionwebgranovivo\\pages\\admin\\reportealmace\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|solutionrelative:solucionwebgranovivo\\pages\\admin\\reportealmace\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|d:\\asdasd\\grano_vivo\\grano_vivo\\solucionwebgranovivo\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{299823D9-E764-4779-8F76-79D79988EE98}|SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj|solutionrelative:solucionwebgranovivo\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -67,66 +51,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Admin\\Factura\\Index.cshtml",
-              "RelativeDocumentMoniker": "SolucionWebGranoVivo\\Pages\\Admin\\Factura\\Index.cshtml",
-              "ToolTip": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Admin\\Factura\\Index.cshtml",
-              "RelativeToolTip": "SolucionWebGranoVivo\\Pages\\Admin\\Factura\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T03:06:55.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\appsettings.json",
-              "RelativeDocumentMoniker": "SolucionWebGranoVivo\\appsettings.json",
-              "ToolTip": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\appsettings.json",
-              "RelativeToolTip": "SolucionWebGranoVivo\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-17T02:36:28.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20251217023517_pierop.cs",
-              "DocumentMoniker": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Migrations\\20251217023517_pierop.cs",
-              "RelativeDocumentMoniker": "SolucionWebGranoVivo\\Migrations\\20251217023517_pierop.cs",
-              "ToolTip": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Migrations\\20251217023517_pierop.cs",
-              "RelativeToolTip": "SolucionWebGranoVivo\\Migrations\\20251217023517_pierop.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T02:35:21.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SolucionWebGranoVivo\\Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "SolucionWebGranoVivo\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAC4AAABEAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC4AAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T02:31:19.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Admin\\ReporteAlmace\\Index.cshtml",
-              "RelativeDocumentMoniker": "SolucionWebGranoVivo\\Pages\\Admin\\ReporteAlmace\\Index.cshtml",
-              "ToolTip": "D:\\asdasd\\Grano_Vivo\\Grano_Vivo\\SolucionWebGranoVivo\\Pages\\Admin\\ReporteAlmace\\Index.cshtml",
-              "RelativeToolTip": "SolucionWebGranoVivo\\Pages\\Admin\\ReporteAlmace\\Index.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAkwDcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-17T02:28:09.802Z",
+              "WhenOpened": "2025-12-17T03:08:46.158Z",
               "EditorCaption": ""
             }
           ]
