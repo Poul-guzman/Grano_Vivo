@@ -11,11 +11,12 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-SolucionWebGranoVivo-4a28d10d-c4ca-45f1-8df1-ac56b481320c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93872fd9c649c9b02ba8a7e25d685d0c8164d038")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec8efaf8be0435c83df5d4250523bab8c254c212")]
 [assembly: System.Reflection.AssemblyProductAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SolucionWebGranoVivo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
