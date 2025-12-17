@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matia\\Downloads\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj": {}
+    "C:\\Users\\usuario\\OneDrive\\Desktop\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matia\\Downloads\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj": {
+    "C:\\Users\\usuario\\OneDrive\\Desktop\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Downloads\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj",
+        "projectUniqueName": "C:\\Users\\usuario\\OneDrive\\Desktop\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj",
         "projectName": "SolucionWebGranoVivo",
-        "projectPath": "C:\\Users\\matia\\Downloads\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj",
-        "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Downloads\\Grano_Vivo-main\\SolucionWebGranoVivo\\obj\\",
+        "projectPath": "C:\\Users\\usuario\\OneDrive\\Desktop\\Grano_Vivo-main\\SolucionWebGranoVivo\\SolucionWebGranoVivo.csproj",
+        "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\usuario\\OneDrive\\Desktop\\Grano_Vivo-main\\SolucionWebGranoVivo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\matia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
