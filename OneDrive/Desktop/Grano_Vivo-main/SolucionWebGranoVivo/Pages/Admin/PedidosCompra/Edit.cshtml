@@ -1,0 +1,38 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.PedidosCompra.EditModel
+@{
+    ViewData["Title"] = "Editar Pedido de Compra";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="PedidoCompra.Id" />
+
+    <div class="form-floating mb-3">
+        <input asp-for="PedidoCompra.Codigo" class="form-control" readonly />
+        <label asp-for="PedidoCompra.Codigo">Código</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="PedidoCompra.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select"></select>
+        <label asp-for="PedidoCompra.ProveedorId">Proveedor</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="PedidoCompra.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Procesado">Procesado</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+        <label asp-for="PedidoCompra.Estado">Estado</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="PedidoCompra.Total" class="form-control" readonly />
+        <label asp-for="PedidoCompra.Total">Total</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

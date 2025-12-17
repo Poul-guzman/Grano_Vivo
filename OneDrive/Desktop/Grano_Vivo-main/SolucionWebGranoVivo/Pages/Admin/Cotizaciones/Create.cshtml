@@ -1,0 +1,226 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.Cotizaciones.CreateModel
+@{
+    ViewData["Title"] = "Registrar Cotización";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="Cotizacion.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select">
+            <option value="">Seleccione un proveedor</option>
+        </select>
+        <label asp-for="Cotizacion.ProveedorId">Proveedor</label>
+        <span asp-validation-for="Cotizacion.ProveedorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="Cotizacion.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Aceptada">Aceptada</option>
+            <option value="Rechazada">Rechazada</option>
+        </select>
+        <label asp-for="Cotizacion.Estado">Estado</label>
+    </div>
+
+    <h5>Productos</h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th style="width:110px">Cantidad</th>
+                <th style="width:150px">Precio Unitario</th>
+                <th style="width:150px">Subtotal</th>
+                <th style="width:90px"></th>
+            </tr>
+        </thead>
+        <tbody id="detalleTable">
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-secondary mb-3" onclick="agregarFila()">Agregar producto</button>
+
+    <div class="form-floating mb-3">
+        <input asp-for="Cotizacion.Total" class="form-control" readonly />
+        <label asp-for="Cotizacion.Total">Total</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+
+
+<select id="productoTemplate" class="d-none">
+    <option value="" data-precio="0">Seleccione un producto</option>
+    @foreach (var p in Model.Productos)
+    {
+        <option value="@p.Id" data-precio="@p.Precio">@p.Nombre</option>
+    }
+</select>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        
+        (function attachDebugSubmit() {
+            const formDebug = document.querySelector('form[method="post"]') || document.querySelector('form');
+            if (!formDebug) {
+                console.warn('DEBUG: formulario no encontrado');
+                return;
+            }
+            formDebug.addEventListener('submit', function (e) {
+                console.log('DEBUG: submit event fired');
+                console.log('DEBUG: form method:', formDebug.method, 'action:', formDebug.action);
+                const fd = new FormData(formDebug);
+                for (const [k, v] of fd.entries()) {
+                    console.log('DEBUG FormData:', k, v);
+                }
+            }, { capture: true });
+        })();
+
+       
+        let detalleIndex = 0;
+
+        function agregarFila() {
+            try {
+                const table = document.getElementById("detalleTable");
+                const row = table.insertRow();
+                const index = detalleIndex++;
+
+                const selectOriginal = document.getElementById("productoTemplate");
+                const selectClonado = selectOriginal.cloneNode(true);
+                selectClonado.classList.remove("d-none");
+                selectClonado.id = `DetallesCotizacion_${index}__ProductoId`;
+                selectClonado.name = `DetallesCotizacion[${index}].ProductoId`;
+                selectClonado.setAttribute("onchange", `actualizarPrecio(this, ${index})`);
+
+                const tdProducto = row.insertCell();
+                tdProducto.appendChild(selectClonado);
+
+                const tdCantidad = row.insertCell();
+                tdCantidad.innerHTML = `<input name="DetallesCotizacion[${index}].Cantidad" type="number" class="form-control" min="1" value="1" onchange="calcularSubtotal(${index})" />`;
+
+                const tdPrecioUnitario = row.insertCell();
+                tdPrecioUnitario.innerHTML = `<input name="DetallesCotizacion[${index}].PrecioUnitario" type="number" class="form-control" step="0.01" min="0" readonly />`;
+
+                const tdSubTotal = row.insertCell();
+                tdSubTotal.innerHTML = `<input name="DetallesCotizacion[${index}].SubTotal" type="number" class="form-control" step="0.01" min="0" readonly />`;
+
+                const tdEliminar = row.insertCell();
+                tdEliminar.innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">Eliminar</button>`;
+
+                actualizarPrecio(selectClonado, index);
+            } catch (err) {
+                console.error('Error en agregarFila:', err);
+            }
+        }
+
+        function eliminarFila(button) {
+            try {
+                const row = button.closest('tr');
+                if (!row) return;
+                row.remove();
+                reindexRows();
+                recalcularTotal();
+            } catch (err) {
+                console.error('Error en eliminarFila:', err);
+            }
+        }
+
+        function reindexRows() {
+            try {
+                const table = document.getElementById("detalleTable");
+                const rows = Array.from(table.rows);
+                detalleIndex = 0;
+                rows.forEach((row, newIndex) => {
+                    const select = row.querySelector('select');
+                    if (select) {
+                        select.id = `DetallesCotizacion_${newIndex}__ProductoId`;
+                        select.name = `DetallesCotizacion[${newIndex}].ProductoId`;
+                        select.setAttribute("onchange", `actualizarPrecio(this, ${newIndex})`);
+                    }
+
+                    const cantidad = row.querySelector(`[name$='.Cantidad']`);
+                    if (cantidad) cantidad.name = `DetallesCotizacion[${newIndex}].Cantidad`;
+
+                    const precio = row.querySelector(`[name$='.PrecioUnitario']`);
+                    if (precio) precio.name = `DetallesCotizacion[${newIndex}].PrecioUnitario`;
+
+                    const subtotal = row.querySelector(`[name$='.SubTotal']`);
+                    if (subtotal) subtotal.name = `DetallesCotizacion[${newIndex}].SubTotal`;
+
+                    detalleIndex = newIndex + 1;
+                });
+            } catch (err) {
+                console.error('Error en reindexRows:', err);
+            }
+        }
+
+        function actualizarPrecio(select, index) {
+            try {
+                const selectedOption = select.options[select.selectedIndex];
+                const precio = selectedOption ? selectedOption.getAttribute("data-precio") : "0.00";
+                const precioInput = document.querySelector(`[name='DetallesCotizacion[${index}].PrecioUnitario']`);
+                if (precioInput) {
+                    precioInput.value = parseFloat(precio || 0).toFixed(2);
+                    calcularSubtotal(index);
+                }
+            } catch (err) {
+                console.error('Error en actualizarPrecio:', err);
+            }
+        }
+
+        function calcularSubtotal(index) {
+            try {
+                const cantidadInput = document.querySelector(`[name='DetallesCotizacion[${index}].Cantidad']`);
+                const precioInput = document.querySelector(`[name='DetallesCotizacion[${index}].PrecioUnitario']`);
+                const subtotalInput = document.querySelector(`[name='DetallesCotizacion[${index}].SubTotal']`);
+
+                const cantidad = parseFloat(cantidadInput?.value || 0);
+                const precio = parseFloat(precioInput?.value || 0);
+                const subtotal = cantidad * precio;
+
+                if (subtotalInput) subtotalInput.value = subtotal.toFixed(2);
+                recalcularTotal();
+            } catch (err) {
+                console.error('Error en calcularSubtotal:', err);
+            }
+        }
+
+        function recalcularTotal() {
+            try {
+                let total = 0;
+                document.querySelectorAll("input[name$='.SubTotal']").forEach(input => {
+                    total += parseFloat(input.value || 0);
+                });
+                const totalInput = document.querySelector("[name='Cotizacion.Total']");
+                if (totalInput) totalInput.value = total.toFixed(2);
+            } catch (err) {
+                console.error('Error en recalcularTotal:', err);
+            }
+        }
+
+        
+        (function attachSafeSubmit() {
+            const form = document.querySelector('form[method="post"]') || document.querySelector('form');
+            if (!form) {
+                console.warn("Formulario no encontrado para attachSafeSubmit");
+                return;
+            }
+            form.addEventListener('submit', function (e) {
+                try {
+                    reindexRows();
+                    console.log("DEBUG: reindexRows ejecutado antes de submit");
+                } catch (err) {
+                    console.error("Error en submit handler (no bloquea):", err);
+                }
+            });
+        })();
+    </script>
+}

@@ -1,0 +1,72 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.GuiasSalida.DetailsModel
+@{
+    ViewData["Title"] = "Detalle de guía de salida";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h4">@ViewData["Title"]</h1>
+    <div>
+        <a asp-page="Index" class="btn btn-secondary btn-sm">Volver</a>
+        @if (User.IsInRole("Administrador"))
+        {
+            <a asp-page="Edit" asp-route-id="@Model.GuiaSalida.IdGuiaSalida" class="btn btn-warning btn-sm">Editar</a>
+            <a asp-page="Delete" asp-route-id="@Model.GuiaSalida.IdGuiaSalida" class="btn btn-danger btn-sm">Eliminar</a>
+        }
+        
+        <a asp-page="ExportPdf" asp-route-id="@Model.GuiaSalida.IdGuiaSalida"
+           class="btn btn-danger btn-sm" target="_blank">
+            <i class="fa fa-file-pdf"></i> Exportar PDF
+        </a>
+        <a asp-page="ExportPdf" asp-route-id="@Model.GuiaSalida.IdGuiaSalida"
+           class="btn btn-secondary btn-sm" target="_blank" onclick="window.print()">
+            <i class="fa fa-print"></i> Imprimir
+        </a>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="mb-1"><strong>Fecha:</strong> @Model.GuiaSalida.Fecha.ToString("dd/MM/yyyy")</p>
+                <p class="mb-1"><strong>Guía:</strong> @Model.GuiaSalida.IdGuiaSalida</p>
+            </div>
+            <div class="col-md-4">
+                <p class="mb-1">
+                    <strong>Cliente:</strong>
+                    @(Model.GuiaSalida.Cliente != null ? $"{Model.GuiaSalida.Cliente.Nombres} {Model.GuiaSalida.Cliente.Apellidos}" : "-")
+                </p>
+            </div>
+            <div class="col-md-5">
+                <p class="mb-1"><strong>Responsable:</strong> @Model.GuiaSalida.Responsable</p>
+                <p class="mb-1"><strong>Estado:</strong> @Model.GuiaSalida.Estado</p>
+                <p class="mb-1"><strong>Observaciones:</strong> @Model.GuiaSalida.Observaciones</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h5>Productos despachados</h5>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th class="text-end">Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model.GuiaSalida.Detalles)
+        {
+            <tr>
+                <td>@d.Producto?.Nombre</td>
+                <td class="text-end">@d.Cantidad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.GuiaSalida.Detalles == null || !Model.GuiaSalida.Detalles.Any())
+{
+    <div class="alert alert-secondary">No hay productos asociados a esta guía.</div>
+}

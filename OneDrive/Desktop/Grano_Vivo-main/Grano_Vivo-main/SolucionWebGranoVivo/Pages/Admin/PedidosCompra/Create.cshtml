@@ -1,0 +1,111 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.PedidosCompra.CreateModel
+@{
+    ViewData["Title"] = "Registrar Pedido de Compra";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="PedidoCompra.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select">
+            <option value="">Seleccione un proveedor</option>
+        </select>
+        <label asp-for="PedidoCompra.ProveedorId">Proveedor</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="PedidoCompra.Fecha" class="form-control" type="date" />
+        <label asp-for="PedidoCompra.Fecha">Fecha</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="PedidoCompra.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Procesado">Procesado</option>
+            <option value="Cancelado">Cancelado</option>
+        </select>
+        <label asp-for="PedidoCompra.Estado">Estado</label>
+    </div>
+
+    <h5>Productos</h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="detalleTable"></tbody>
+    </table>
+
+    <button type="button" class="btn btn-secondary mb-3" onclick="agregarFila()">Agregar producto</button>
+
+    <div class="form-floating mb-3">
+        <input asp-for="PedidoCompra.Total" class="form-control" readonly />
+        <label asp-for="PedidoCompra.Total">Total</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+
+<select id="productoTemplate" class="d-none">
+    <option value="" data-precio="0">Seleccione un producto</option>
+    @foreach (var p in Model.Productos)
+    {
+        <option value="@p.Id" data-precio="@p.Precio">@p.Nombre</option>
+    }
+</select>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        let detalleIndex = 0;
+        function agregarFila() {
+            const table = document.getElementById("detalleTable");
+            const row = table.insertRow();
+            const index = detalleIndex++;
+
+            const selectOriginal = document.getElementById("productoTemplate");
+            const selectClonado = selectOriginal.cloneNode(true);
+            selectClonado.classList.remove("d-none");
+            selectClonado.name = `DetallesPedidoCompra[${index}].ProductoId`;
+            selectClonado.setAttribute("onchange", `actualizarPrecio(this, ${index})`);
+
+            row.insertCell().appendChild(selectClonado);
+            row.insertCell().innerHTML = `<input name="DetallesPedidoCompra[${index}].Cantidad" type="number" class="form-control" min="1" value="1" onchange="calcularSubtotal(${index})" />`;
+            row.insertCell().innerHTML = `<input name="DetallesPedidoCompra[${index}].PrecioUnitario" type="number" class="form-control" step="0.01" readonly />`;
+            row.insertCell().innerHTML = `<input name="DetallesPedidoCompra[${index}].SubTotal" type="number" class="form-control" step="0.01" readonly />`;
+            row.insertCell().innerHTML = `<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove(); recalcularTotal()">Eliminar</button>`;
+
+            actualizarPrecio(selectClonado, index);
+        }
+        function actualizarPrecio(select, index) {
+            const precio = select.options[select.selectedIndex].getAttribute("data-precio") || "0.00";
+            document.querySelector(`[name='DetallesPedidoCompra[${index}].PrecioUnitario']`).value = parseFloat(precio).toFixed(2);
+            calcularSubtotal(index);
+        }
+        function calcularSubtotal(index) {
+            const cantidad = parseFloat(document.querySelector(`[name='DetallesPedidoCompra[${index}].Cantidad']`).value || 0);
+            const precio = parseFloat(document.querySelector(`[name='DetallesPedidoCompra[${index}].PrecioUnitario']`).value || 0);
+            const subtotal = cantidad * precio;
+            document.querySelector(`[name='DetallesPedidoCompra[${index}].SubTotal']`).value = subtotal.toFixed(2);
+            recalcularTotal();
+        }
+        function recalcularTotal() {
+            let total = 0;
+            document.querySelectorAll("input[name$='.SubTotal']").forEach(input => {
+                total += parseFloat(input.value || 0);
+            });
+            document.querySelector("[name='PedidoCompra.Total']").value = total.toFixed(2);
+        }
+    </script>
+}

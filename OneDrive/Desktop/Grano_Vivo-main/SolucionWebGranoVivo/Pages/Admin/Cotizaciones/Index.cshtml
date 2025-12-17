@@ -1,0 +1,71 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.Cotizaciones.IndexModel
+@{
+    ViewData["Title"] = "Cotizaciones";
+    Layout = "_Layout";
+}
+
+<h1 class="mb-4">Cotizaciones</h1>
+
+<div class="mb-3">
+    <a asp-page="Create" class="btn btn-primary">Nueva Cotización</a>
+</div>
+
+@if (Model.Cotizaciones == null || !Model.Cotizaciones.Any())
+{
+    <div class="alert alert-info">
+        No hay cotizaciones registradas
+    </div>
+}
+else
+{
+    <table class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Fecha</th>
+                <th>Proveedor</th>
+                <th>Estado</th>
+                <th>Total</th>
+                <th>Productos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Cotizaciones)
+            {
+                <tr>
+                    <td>@item.Codigo</td>
+                    <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                    <td>@(item.Proveedor?.Nombre + " ")</td>
+                    <td>@item.Estado</td>
+                    <td>@item.Total.ToString("C")</td>
+
+                    
+                    <td>
+                        @if (item.Detalles != null && item.Detalles.Any())
+                        {
+                            <ul class="mb-0">
+                                @foreach (var d in item.Detalles)
+                                {
+                                    <li>@d.Producto?.Nombre — Cant: @d.Cantidad — PU: @d.PrecioUnitario.ToString("C") — Subtotal: @d.SubTotal.ToString("C")</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <em>Sin productos</em>
+                        }
+                    </td>
+
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Ver</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

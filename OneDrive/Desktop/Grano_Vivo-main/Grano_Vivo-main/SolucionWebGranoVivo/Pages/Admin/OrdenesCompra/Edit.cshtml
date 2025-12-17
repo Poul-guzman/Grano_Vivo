@@ -1,0 +1,38 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.OrdenesCompra.EditModel
+@{
+    ViewData["Title"] = "Editar Orden de Compra";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="OrdenCompra.Id" />
+
+    <div class="form-floating mb-3">
+        <input asp-for="OrdenCompra.Codigo" class="form-control" readonly />
+        <label asp-for="OrdenCompra.Codigo">Código</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="OrdenCompra.ProveedorId" asp-items="Model.ProveedoresSelectList" class="form-select"></select>
+        <label asp-for="OrdenCompra.ProveedorId">Proveedor</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <select asp-for="OrdenCompra.Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Procesada">Procesada</option>
+            <option value="Cancelada">Cancelada</option>
+        </select>
+        <label asp-for="OrdenCompra.Estado">Estado</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="OrdenCompra.Total" class="form-control" readonly />
+        <label asp-for="OrdenCompra.Total">Total</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

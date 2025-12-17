@@ -1,0 +1,17 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.Cotizaciones.DeleteModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Eliminar Cotización";
+}
+
+<h1>Eliminar Cotización</h1>
+
+<div class="alert alert-danger">
+    <p>¿Está seguro que desea eliminar la cotización <strong>@Model.Cotizacion.Id</strong> del proveedor <strong>@Model.Cotizacion.Proveedor?.Nombre</strong>?</p>
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>

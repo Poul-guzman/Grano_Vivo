@@ -1,0 +1,38 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.GuiasEntrada.DetailsModel
+@{
+    ViewData["Title"] = "Detalles de Guía de Entrada";
+}
+
+<div class="container mt-4">
+
+    <h2>Guía de Entrada @Model.GuiaEntrada.IdGuiaEntrada</h2>
+
+    <p><strong>Proveedor:</strong> @Model.GuiaEntrada.Proveedor?.Nombre</p>
+    <p><strong>Fecha:</strong> @Model.GuiaEntrada.Fecha.ToShortDateString()</p>
+    <p><strong>Responsable:</strong> @Model.GuiaEntrada.Responsable</p>
+    <p><strong>Estado:</strong> @Model.GuiaEntrada.Estado</p>
+    <p><strong>Observaciones:</strong> @Model.GuiaEntrada.Observaciones</p>
+
+    <h4 class="mt-4">Productos</h4>
+
+    <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GuiaEntrada.Detalles)
+            {
+                <tr>
+                    <td>@item.Producto?.Nombre</td>
+                    <td>@item.Cantidad</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-page="Index" class="btn btn-secondary mt-3">Volver</a>
+</div>

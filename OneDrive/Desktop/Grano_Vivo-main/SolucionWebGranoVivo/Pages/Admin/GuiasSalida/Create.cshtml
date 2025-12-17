@@ -1,0 +1,115 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.GuiasSalida.CreateModel
+
+@{
+    ViewData["Title"] = "Nueva Guía de Salida";
+    Layout = "_Layout";
+}
+
+<h1>Nueva Guía de Salida</h1>
+
+<form method="post">
+    <div class="card p-4 mb-4">
+        <h4>Datos generales</h4>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label>Cliente</label>
+                <select asp-for="GuiaSalida.ClienteId" class="form-select" asp-items="Model.ClientesLista"></select>
+            </div>
+
+            <div class="col-md-3">
+                <label>Fecha</label>
+                <input asp-for="GuiaSalida.Fecha" type="datetime-local" class="form-control" />
+            </div>
+
+            <div class="col-md-3">
+                <label>Responsable</label>
+                <input asp-for="GuiaSalida.Responsable" class="form-control" />
+            </div>
+
+            <div class="col-12">
+                <label>Observaciones</label>
+                <textarea asp-for="GuiaSalida.Observaciones" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card p-4">
+        <h4>Productos</h4>
+
+        <table class="table" id="tablaProductos">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbodyProductos">
+                
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-success" onclick="agregarFila()">Agregar producto</button>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Guardar guía</button>
+    <a asp-page="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+
+<script>
+   
+    var productosLista = [
+        @foreach (var p in Model.ProductosLista)
+        {
+                <text>{ value: "@p.Value", text: "@p.Text" },</text>
+        }
+    ];
+
+    function agregarFila() {
+        let tbody = document.getElementById("tbodyProductos");
+        let index = tbody.rows.length;
+
+        let fila = document.createElement("tr");
+
+        fila.innerHTML = `
+            <td>
+                <select class="form-select" name="Detalles[${index}].ProductoId">
+                    ${productosLista.map(p => `<option value="${p.value}">${p.text}</option>`).join('')}
+                </select>
+                <input type="hidden" name="Detalles[${index}].Id" value="0" />
+                <input type="hidden" name="Detalles[${index}].IdGuiaSalida" value="@Model.GuiaSalida.IdGuiaSalida" />
+            </td>
+
+            <td>
+                <input type="number" class="form-control" name="Detalles[${index}].Cantidad" min="1" value="1" />
+            </td>
+
+            <td>
+                <button type="button" class="btn btn-danger" onclick="eliminarFila(this)">X</button>
+            </td>
+        `;
+
+        tbody.appendChild(fila);
+        actualizarIndices();
+    }
+
+    function eliminarFila(btn) {
+        btn.closest("tr").remove();
+        actualizarIndices();
+    }
+
+    function actualizarIndices() {
+        let filas = document.querySelectorAll("#tbodyProductos tr");
+
+        filas.forEach((fila, index) => {
+            fila.querySelector("select").name = `Detalles[${index}].ProductoId`;
+            fila.querySelector("input[type=hidden][name*='Id']").name = `Detalles[${index}].Id`;
+            fila.querySelector("input[type=hidden][name*='IdGuiaSalida']").name = `Detalles[${index}].IdGuiaSalida`;
+            fila.querySelector("input[type=number]").name = `Detalles[${index}].Cantidad`;
+        });
+    }
+</script>

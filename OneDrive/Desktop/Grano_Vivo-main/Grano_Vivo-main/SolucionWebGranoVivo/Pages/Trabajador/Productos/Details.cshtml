@@ -1,0 +1,48 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Trabajador.Productos.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles del Producto";
+}
+
+<h1>Detalles del Producto</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Código</dt>
+        <dd class="col-sm-10">@Model.Producto.Codigo</dd>
+
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Producto.Nombre</dd>
+
+        <dt class="col-sm-2">Descripción</dt>
+        <dd class="col-sm-10">@Model.Producto.Descripcion</dd>
+
+        <dt class="col-sm-2">Precio</dt>
+        <dd class="col-sm-10">@Model.Producto.Precio</dd>
+
+        <dt class="col-sm-2">Stock</dt>
+        <dd class="col-sm-10">@Model.Producto.Stock</dd>
+
+        <dt class="col-sm-2">Peso</dt>
+        <dd class="col-sm-10">@Model.Producto.Peso</dd>
+
+        <dt class="col-sm-2">Tipo Tueste</dt>
+        <dd class="col-sm-10">@Model.Producto.TipoTueste</dd>
+
+        <dt class="col-sm-2">Origen</dt>
+        <dd class="col-sm-10">@Model.Producto.Origen</dd>
+
+        <dt class="col-sm-2">Imagen</dt>
+        <dd class="col-sm-10">
+            <img src="@Model.Producto.ImagenUrl" style="width:200px" />
+        </dd>
+
+        <dt class="col-sm-2">Estado</dt>
+        <dd class="col-sm-10">@Model.Producto.Estado</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-page="./Index" class="btn btn-secondary">Volver</a>
+</div>

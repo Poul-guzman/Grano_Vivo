@@ -1,0 +1,63 @@
+﻿@page "{id}"
+@model SolucionWebGranoVivo.Pages.Admin.Cotizaciones.DetailsModel
+@{
+    ViewData["Title"] = "Detalle de Cotización";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h4">@ViewData["Title"]</h1>
+    <div>
+        <a asp-page="Index" class="btn btn-secondary btn-sm">Volver</a>
+        <a asp-page="./ExportPdf" asp-route-id="@Model.Cotizacion.Id" class="btn btn-danger btn-sm" target="_blank">
+            <i class="fa fa-file-pdf"></i> Exportar PDF
+        </a>
+        <a asp-page="ExportPdf" asp-route-id="@Model.Cotizacion.Id"
+           class="btn btn-secondary btn-sm" target="_blank" onclick="window.print()">
+            <i class="fa fa-print"></i> Imprimir
+        </a>
+        @if (User.IsInRole("Administrador"))
+
+        {
+            <a asp-page="Edit" asp-route-id="@Model.Cotizacion.Id" class="btn btn-warning btn-sm">Editar</a>
+            <a asp-page="Delete" asp-route-id="@Model.Cotizacion.Id" class="btn btn-danger btn-sm">Eliminar</a>
+        }
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Código:</strong> @Model.Cotizacion.Codigo</p>
+        <p><strong>Fecha:</strong> @Model.Cotizacion.Fecha.ToString("dd/MM/yyyy")</p>
+        <p><strong>Cliente:</strong> @(Model.Cotizacion.Proveedor != null ? $"{Model.Cotizacion.Proveedor.Nombre}" : "-")</p>
+        <p><strong>Estado:</strong> @Model.Cotizacion.Estado</p>
+        <p><strong>Total:</strong> @Model.Cotizacion.Total.ToString("C")</p>
+    </div>
+</div>
+
+<h5>Productos cotizados</h5>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th class="text-end">Cantidad</th>
+            <th class="text-end">Precio Unitario</th>
+            <th class="text-end">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model.Cotizacion.Detalles)
+        {
+            <tr>
+                <td>@d.Producto?.Nombre</td>
+                <td class="text-end">@d.Cantidad</td>
+                <td class="text-end">@d.PrecioUnitario.ToString("C")</td>
+                <td class="text-end">@d.SubTotal.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (Model.Cotizacion.Detalles == null || !Model.Cotizacion.Detalles.Any())
+{
+    <div class="alert alert-secondary">No hay productos asociados a esta cotización.</div>
+}

@@ -1,0 +1,41 @@
+﻿@page
+@model SolucionWebGranoVivo.Pages.Admin.GuiasEntrada.IndexModel
+@{
+    ViewData["Title"] = "Guías de Entrada";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3">Guías de Entrada</h2>
+
+    <a asp-page="Create" class="btn btn-primary mb-3">Nueva Guía de Entrada</a>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Proveedor</th>
+                <th>Fecha</th>
+                <th>Responsable</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.GuiasEntrada)
+            {
+                <tr>
+                    <td>@item.IdGuiaEntrada</td>
+                    <td>@item.Proveedor?.Nombre</td>
+                    <td>@item.Fecha.ToShortDateString()</td>
+                    <td>@item.Responsable</td>
+                    <td>@item.Estado</td>
+                    <td>
+                        <a asp-page="Detalles" asp-route-id="@item.IdGuiaEntrada" class="btn btn-sm btn-info">Detalles</a>
+                        <a asp-page="Edit" asp-route-id="@item.IdGuiaEntrada" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-page="Delete" asp-route-id="@item.IdGuiaEntrada" class="btn btn-sm btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

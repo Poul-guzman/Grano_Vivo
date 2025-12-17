@@ -1,0 +1,211 @@
+﻿@page
+@model TiendaModel
+@{
+    ViewData["Title"] = "Tienda";
+}
+
+<div class="container my-5">
+    <div class="row">
+  
+        <aside class="col-md-3">
+            <h5 class="fw-bold mb-4">Categoría</h5>
+            <hr>
+            <p><a href="#" class="text-decoration-none text-dark">Línea</a></p>
+            <hr>
+            <p><a href="#" class="text-decoration-none text-dark">Perfil de calidad</a></p>
+            <hr>
+            <p><a href="#" class="text-decoration-none text-dark">Origen</a></p>
+            <hr>
+            <p><a href="#" class="text-decoration-none text-dark">Peso</a></p>
+        </aside>
+
+        <section class="col-md-9">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <div class="position-relative">
+                            <img src="~/img/cafe01.png" class="card-img-top" alt="Café Tradición">
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="text-success fw-bold">CAFÉ TRADICIÓN - PACK X3</h6>
+                            <p class="text-decoration-line-through text-muted">S/90</p>
+                            <p class="fs-5 fw-bold">S/80</p>
+                            <button class="btn btn-success w-100 agregar-carrito" 
+                                    data-producto-id="1" 
+                                    data-producto-nombre="CAFÉ TRADICIÓN - PACK X3"
+                                    data-producto-precio="80"
+                                    data-producto-imagen="/img/cafe01.png"
+                                    data-producto-stock="100">
+                                AÑADIR AL CARRITO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <div class="position-relative">
+                            <img src="~/img/cafe02.png" class="card-img-top" alt="Café Orgánico">
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="text-success fw-bold">CAFÉ ORGÁNICO - PACK X3</h6>
+                            <p class="text-decoration-line-through text-muted">S/105</p>
+                            <p class="fs-5 fw-bold">S/90</p>
+                            <button class="btn btn-success w-100 agregar-carrito" 
+                                    data-producto-id="2" 
+                                    data-producto-nombre="CAFÉ ORGÁNICO - PACK X3"
+                                    data-producto-precio="90"
+                                    data-producto-imagen="/img/cafe02.png"
+                                    data-producto-stock="100">
+                                AÑADIR AL CARRITO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <div class="position-relative">
+                            <img src="~/img/cafe03.png" class="card-img-top" alt="Café Premium">
+                        </div>
+                        <div class="card-body text-center">
+                            <h6 class="text-success fw-bold">CAFÉ PREMIUM - PACK X3</h6>
+                            <p class="text-decoration-line-through text-muted">S/135</p>
+                            <p class="fs-5 fw-bold">S/115</p>
+                            <button class="btn btn-success w-100 agregar-carrito" 
+                                    data-producto-id="3" 
+                                    data-producto-nombre="CAFÉ PREMIUM - PACK X3"
+                                    data-producto-precio="115"
+                                    data-producto-imagen="/img/cafe03.png"
+                                    data-producto-stock="100">
+                                AÑADIR AL CARRITO
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<a href="#" class="boton-carrito" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+    <img src="~/img/logocarrito.jpg" alt="carrito de compras" class="carrito" />
+    <span class="contador-carrito" id="contador-carrito-flotante">@Model.CantidadCarrito</span>
+</a>
+
+<div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="modalCarritoLabel">
+                    <i class="fas fa-shopping-cart me-2"></i>Carrito de Compras
+                    <span class="badge bg-warning text-dark ms-2" id="contador-carrito-modal">@Model.CantidadCarrito</span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                <div id="carrito-items">
+                    @if (Model.Carrito != null && Model.Carrito.Any())
+                    {
+                        @foreach (var item in Model.Carrito)
+                        {
+                            <div class="carrito-item mb-3 p-3 border rounded" data-producto-id="@item.ProductoId">
+                                <div class="d-flex">
+                                    <img src="@item.ImagenUrl" alt="@item.Nombre" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">@item.Nombre</h6>
+                                        <p class="text-muted small mb-1">Precio: S/ @item.Precio.ToString("F2")</p>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <label class="me-2 small">Cantidad:</label>
+                                            <input type="number" 
+                                                   class="form-control form-control-sm cantidad-input" 
+                                                   value="@item.Cantidad" 
+                                                   min="1" 
+                                                   max="@item.StockDisponible"
+                                                   style="width: 70px;"
+                                                   data-producto-id="@item.ProductoId">
+                                        </div>
+                                        <p class="mb-0 fw-bold text-primary">Subtotal: S/ <span class="item-subtotal">@item.Subtotal.ToString("F2")</span></p>
+                                    </div>
+                                    <button class="btn btn-sm btn-danger eliminar-item" data-producto-id="@item.ProductoId" title="Eliminar">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-center text-muted">Tu carrito está vacío</p>
+                    }
+                </div>
+            </div>
+            @if (Model.Carrito != null && Model.Carrito.Any())
+            {
+                <div class="modal-footer">
+                    <div class="w-100 mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Subtotal:</span>
+                            <span id="subtotal-carrito">S/ @Model.Carrito.Sum(x => x.Subtotal).ToString("F2")</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>IGV (18%):</span>
+                            <span id="impuesto-carrito">S/ @((Model.Carrito.Sum(x => x.Subtotal) * 0.18m).ToString("F2"))</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between fw-bold fs-5">
+                            <span>Total:</span>
+                            <span class="text-primary" id="total-carrito">S/ @((Model.Carrito.Sum(x => x.Subtotal) * 1.18m).ToString("F2"))</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConfirmarPedido" data-bs-dismiss="modal">
+                        <i class="fas fa-check me-2"></i>Confirmar Pedido
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalConfirmarPedido" tabindex="-1" aria-labelledby="modalConfirmarPedidoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="modalConfirmarPedidoLabel">Confirmar Pedido</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="formConfirmarPedido">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombreCliente" class="form-label">Nombre Completo <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="nombreCliente" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailCliente" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="emailCliente" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="telefonoCliente" class="form-label">Teléfono <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control" id="telefonoCliente" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="direccionCliente" class="form-label">Dirección de Envío <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="direccionCliente" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="alert-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+@section Scripts {
+    <script src="~/js/tienda.js" asp-append-version="true"></script>
+    <script src="~/js/carrito.js" asp-append-version="true"></script>
+}
